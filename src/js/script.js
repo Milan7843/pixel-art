@@ -3,17 +3,22 @@ var ctx = canvas.getContext("2d");
 
 var mousePosition = {x:1, y:1};
 
-var width = 466;
-var height = 400;
-
-const sizex = 60;
-const sizey = 60;
+const sizex = 10;
+const sizey = 10;
 
 var pixels = new Array(sizex);
+var width = 400;
+var height = 400;
 
 var pixelSize = width/sizex;
 
+var mainColor = new Color("#00FF88");
+var secondaryColor = new Color("#EE22CC");
 
+
+/**
+ * Start the program.
+ */
 function start() {
     initialiseField();
     drawCanvas();
@@ -28,14 +33,14 @@ function drawCanvas() {
     // Emptying the background
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Drawign each pixel
+    // Drawing each pixel
     for (var x = 0; x < sizex; x++) {
         for (var y = 0; y < sizey; y++) {
             if (this.pixels[x][y] == 1) {
-                ctx.fillStyle = "rgba(0, 255, 0, 1)";
+                ctx.fillStyle = mainColor.getColor();
             }
             else {
-                ctx.fillStyle = "rgba(255, 0, 0, 1)";
+                ctx.fillStyle = "rgba(255, 255, 255, 1)";
             }
             ctx.fillRect(x*pixelSize, y*pixelSize, pixelSize, pixelSize);
         }

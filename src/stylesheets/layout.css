@@ -1,0 +1,69 @@
+.container {
+    /* Container should fill screen entirely*/
+    height: 100%;
+    display: grid;
+    grid-template-columns: [first] 10% [end-left-panel] 80% [start-right-panel] 10% [end-right-panel];
+    grid-template-rows: [first] 90% [start-bottom-panel] 10% [end-bottom-panel];
+    margin: 0px;
+}
+html, 
+body {
+    /* Always fit to screen */
+    height: 100%;
+    /* Removes white edge around grid */
+    margin: 0px
+}
+
+.panel {
+    padding: 1%;
+}
+
+.left-panel {
+    background-color: orange;
+    grid-column-start: first;
+    grid-column-end: end-left-panel;
+    grid-row-start: first;
+    grid-row-end: start-bottom-panel;
+}
+.right-panel {
+    background-color: greenyellow;
+    grid-column-start: start-right-panel;
+    grid-column-end: end-right-panel;
+    grid-row-start: first;
+    grid-row-end: start-bottom-panel;
+}
+.middle-panel {
+    background-color: purple;
+    grid-column-start: end-left-panel;
+    grid-column-end: end-right-panel;
+    grid-row-start: first;
+    grid-row-end: start-bottom-panel;
+}
+.bottom-panel {
+    background-color: lightsalmon;
+    grid-column-start: first;
+    grid-column-end: end-right-panel;
+    grid-row-start: start-bottom-panel;
+    grid-row-end: end-bottom-panel;
+}
+
+/*.panel {
+    position: absolute;
+    display: inline;
+    border-color: black;
+    border-radius: 1px;
+}
+
+.left-panel {
+    width: 20%;
+    float: left;
+    left: 1%;
+    top: 1%;
+}
+.right-panel {
+    width: 20%;
+    float: right;
+    right: 1%;
+    top: 1%;
+}
+*/
